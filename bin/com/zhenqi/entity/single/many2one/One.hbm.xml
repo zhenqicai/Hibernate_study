@@ -1,0 +1,15 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zhenqi.entity.single.many2one">
+
+	<class name="One" table="one">
+		<id name="id" column="one_id">
+		    <generator class="native"/>
+		</id>
+		<property name="name"></property>
+		<!-- 映射多对一关系 -->
+		<many-to-one name="many" class="Many" column="many_id" cascade="all"></many-to-one>
+	</class>
+</hibernate-mapping> 
