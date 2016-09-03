@@ -1,0 +1,16 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zhenqi.entity.two.one2one">
+
+	<class name="Loginer" table="loginer">
+		<id name="id" column="login_id">
+		    <generator class="native"/>
+		</id>
+		<property name="username"></property>
+		<property name="password"></property>
+		<!-- 反向的一对一关系，其中一方使用 one-to-one 另外一方则要使用many-to-one -->
+		<many-to-one name="user" class="User" column="user_id" cascade="all"></many-to-one>
+	</class>
+</hibernate-mapping> 

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zhenqi.entity.single.many2many">
+
+	<class name="Teacher" table="teacher">
+		<id name="id" column="tea_id">
+			<generator class="native" />
+		</id>
+		<property name="name"></property>
+		<property name="age"></property>
+
+		<set name="students" table="teacher_student" cascade="all">
+			<key column="tea_id" />
+			<many-to-many class="Student" column="stu_id"  />
+		</set>
+
+	</class>
+</hibernate-mapping> 

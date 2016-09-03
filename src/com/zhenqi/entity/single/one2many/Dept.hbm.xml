@@ -1,0 +1,18 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zhenqi.entity.single.one2many">
+
+	<class name="Dept" table="dept">
+		<id name="id" column="dept_id">
+		    <!-- <generator class="native"/> -->
+		</id>
+		<property name="name"></property>
+		
+		<set name="emps" cascade="all" lazy="false" >
+		    <key column="dept_id"></key><!-- Employee的外键 -->
+		    <one-to-many class="Employee"  not-found="exception"/>
+		</set>
+	</class>
+</hibernate-mapping> 

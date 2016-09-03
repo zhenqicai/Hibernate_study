@@ -1,0 +1,19 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zhenqi.entity.single.one2one">
+
+	<class name="Man" table="man">
+		<id name="id" column="man_id">
+		    <generator class="native"/>
+		</id>
+		<property name="name"></property>
+		<property name="age"></property>
+		<property name="address"></property>
+		
+		<!-- 单向一对一  -->
+		<many-to-one name="idCard" class="IDCard" column="card_id" 
+		    not-null="true" ></many-to-one>
+	</class>
+</hibernate-mapping> 
